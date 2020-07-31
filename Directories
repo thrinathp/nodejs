@@ -1,0 +1,36 @@
+//1.delete file 
+
+const fs= require ('fs');
+
+const path = './delete.txt'
+
+fs.unlink(path, (err)=>{
+   if(err){
+       console.log(err)
+       return
+   }
+});
+
+
+
+//2. create a directorie 
+
+var fs = require('fs');
+
+fs.mkdir('staff', function(){
+    fs.readFile('readme.txt','utf8',function(err,data){
+      fs.writeFile('./staff/writeme.txt',data, function(err, result) {
+        if(err) console.log('error', err);
+      });
+    });
+});
+
+//2. delete file and directorie
+
+var fs = require('fs');
+
+fs.unlink('./staffs/writeme.txt', function(){
+    fs.rmdir('staffs');
+});
+    
+
